@@ -1,6 +1,9 @@
 # Compiled class file
-*.class
+/ProgrammationGLExo4point2/*.class
+/ProgrammationGLExo4point2/*.project
 
+/target/
+/ProgrammationGLExo4point2/.settings
 # Log file
 *.log
 
