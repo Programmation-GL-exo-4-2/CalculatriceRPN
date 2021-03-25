@@ -8,7 +8,7 @@ public class MoteurRPN extends Interpreteur{
 	//constructeur
 	public MoteurRPN() 
 	{
-		
+		ListOperande = new ArrayList<Integer>();
 	}
 	
 	public void enregistrerOprnd() 
