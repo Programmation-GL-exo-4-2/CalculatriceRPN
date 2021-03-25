@@ -1,4 +1,4 @@
-package UVSQ;
+package UVSQ.ProgrammationGLExo4point2;
 
 public class Soustraction implements Command{
 
