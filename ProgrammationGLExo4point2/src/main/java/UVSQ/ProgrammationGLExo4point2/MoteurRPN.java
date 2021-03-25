@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 public class MoteurRPN extends Interpreteur{
 	
+	private ArrayList<Integer> ListOperande;
 	//constructeur
 	public MoteurRPN() 
 	{
-		
+		ListOperande = new ArrayList<Integer>();
 	}
 	
 	public void enregistrerOprnd() 
@@ -24,5 +25,13 @@ public class MoteurRPN extends Interpreteur{
 		
 		//Pour l'instant rien, à developper
 		return null;
+	}
+
+	public ArrayList<Integer> getListOperande() {
+		return ListOperande;
+	}
+
+	public void setListOperande(ArrayList<Integer> listOperande) {
+		ListOperande = listOperande;
 	}
 }
