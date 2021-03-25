@@ -13,7 +13,7 @@ public class MoteurRPN extends Interpreteur{
 	
 	public void enregistrerOprnd(int op) 
 	{
-		
+		listOperande.add(op);
 	}
 	
 	public void operationOprnd()
