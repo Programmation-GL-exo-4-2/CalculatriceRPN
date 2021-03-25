@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 
 public class AdditionTest extends TestCase {
 	@Test 
-	public void testConstructeur()
+	public void testConstructeurAddition()
 	{
 		MoteurRPN rpn = new MoteurRPN();
 		Addition command = new Addition(rpn);
