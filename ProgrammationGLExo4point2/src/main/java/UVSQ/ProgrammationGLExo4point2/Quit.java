@@ -4,7 +4,7 @@ public class Quit extends AbstractCommandClass implements Command{
 
 	public Quit(Interpreteur tmp) 
 	{
-		
+		setInter(tmp);
 	}
 	
 	public void execute() {
