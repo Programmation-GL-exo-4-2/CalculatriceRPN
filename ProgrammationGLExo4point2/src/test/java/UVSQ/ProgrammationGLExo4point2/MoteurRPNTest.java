@@ -11,5 +11,15 @@ public class MoteurRPNTest {
 		MoteurRPN m = new MoteurRPN();
 		assertNotEquals(null, m.getListOperande());
 	}
+	
+	@Test
+	public void testEnregistrerOprnd()
+	{
+		MoteurRPN rpn=new MoteurRPN();
+		rpn.enregistrerOprnd(5);
+		int x=rpn.getListOperande().get(0);
+		assertEquals(0,x);
+		
+	}
 
 }
