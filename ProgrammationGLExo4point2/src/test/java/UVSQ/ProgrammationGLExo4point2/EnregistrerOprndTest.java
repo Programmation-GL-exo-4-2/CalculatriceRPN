@@ -10,7 +10,7 @@ public class EnregistrerOprndTest {
 	public void testConstructeurEng() 
 	{
 		MoteurRPN rpn = new MoteurRPN();
-		Addition command = new Addition(rpn);
+		EnregistrerOprnd command = new EnregistrerOprnd(rpn);
 		assertEquals(command.getInter(),rpn);
 	}
 	
@@ -22,8 +22,8 @@ public class EnregistrerOprndTest {
 		rpn.setSaisie("1");
 		eng.execute();
 		int x=0;
-		if(!rpn.getListOperande().isEmpty())
-			x=rpn.getListOperande().get(0);
+		if(!eng.getRpn().getListOperande().isEmpty())
+			x=eng.getRpn().getListOperande().get(0);
 		assertEquals(x,1);
 	}
 
