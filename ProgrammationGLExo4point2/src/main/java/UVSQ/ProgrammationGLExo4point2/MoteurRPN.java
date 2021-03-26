@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class MoteurRPN extends Interpreteur{
 	
 	private ArrayList<Integer> listOperande;
+	private char dernierSaisie;
 	//constructeur
 	public MoteurRPN() 
 	{
@@ -33,5 +34,15 @@ public class MoteurRPN extends Interpreteur{
 
 	public void setListOperande(ArrayList<Integer> listOperande) {
 		listOperande = listOperande;
+	}
+	
+	public char getSaisie()
+	{
+		return this.dernierSaisie;
+	}
+	
+	public void setSaisie(char a)
+	{
+		this.dernierSaisie=a;
 	}
 }
