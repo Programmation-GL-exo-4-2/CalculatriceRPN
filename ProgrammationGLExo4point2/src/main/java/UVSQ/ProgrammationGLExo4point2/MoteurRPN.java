@@ -11,12 +11,12 @@ public class MoteurRPN extends Interpreteur{
 		listOperande = new ArrayList<Integer>();
 	}
 	
-	public void enregistrerOprnd(int op) 
+	public void enregistrerOprnd(int oprnd) 
 	{
-		listOperande.add(op);
+		listOperande.add(oprnd);
 	}
 	
-	public void operationOprnd()
+	public void operationOprnd(int op)
 	{
 		
 	}
