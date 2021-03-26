@@ -19,8 +19,11 @@ public class SoustractionTest {
 	{
 		MoteurRPN rpn = new MoteurRPN();
 		Soustraction s =new Soustraction(rpn);
-		rpn.getEnsembleOpnd().add(3);
-		rpn.getEnsembleOpnd().add(2);
+		s.getRpn().setSaisie("3");
+		s.getRpn().enregistrerOprnd();
+		s.getRpn().setSaisie("2");
+		s.getRpn().enregistrerOprnd();
+		s.execute();
 		s.execute();
 		int x=rpn.getListOperande().get(0);
 		assertEquals(x,1);

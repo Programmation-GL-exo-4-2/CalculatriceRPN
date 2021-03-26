@@ -1,6 +1,6 @@
 package UVSQ.ProgrammationGLExo4point2;
 
-public class Addition extends AbstractCommandClass implements Command {
+public class Addition extends CommandClass implements Command {
 
 	public Addition(MoteurRPN rpn)
 	{

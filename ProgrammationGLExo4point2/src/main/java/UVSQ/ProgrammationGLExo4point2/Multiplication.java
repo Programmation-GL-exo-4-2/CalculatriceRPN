@@ -1,6 +1,6 @@
 package UVSQ.ProgrammationGLExo4point2;
 
-public class Multiplication extends AbstractCommandClass implements Command{
+public class Multiplication extends CommandClass implements Command{
 	
 	public Multiplication(MoteurRPN rpn)
 	{

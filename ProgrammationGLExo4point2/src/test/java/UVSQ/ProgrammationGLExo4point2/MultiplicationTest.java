@@ -18,8 +18,11 @@ public class MultiplicationTest {
 	{
 		MoteurRPN rpn = new MoteurRPN();
 		Multiplication m =new Multiplication(rpn);
-		rpn.getEnsembleOpnd().add(3);
-		rpn.getEnsembleOpnd().add(2);
+		m.getRpn().setSaisie("3");
+		m.getRpn().enregistrerOprnd();
+		m.getRpn().setSaisie("2");
+		m.getRpn().enregistrerOprnd();
+		m.execute();
 		m.execute();
 		int x=rpn.getListOperande().get(0);
 		assertEquals(x,6);

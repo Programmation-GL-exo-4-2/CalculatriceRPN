@@ -18,8 +18,11 @@ public class DivisionTest {
 	{
 		MoteurRPN rpn = new MoteurRPN();
 		Division d =new Division(rpn);
-		rpn.getEnsembleOpnd().add(4);
-		rpn.getEnsembleOpnd().add(2);
+		d.getRpn().setSaisie("2");
+		d.getRpn().enregistrerOprnd();
+		d.getRpn().setSaisie("4");
+		d.getRpn().enregistrerOprnd();
+		d.execute();
 		d.execute();
 		int x=rpn.getListOperande().get(0);
 		assertEquals(x,2);
