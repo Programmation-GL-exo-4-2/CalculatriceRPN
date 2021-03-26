@@ -12,5 +12,17 @@ public class MultiplicationTest {
 		Multiplication command = new Multiplication(rpn);
 		assertEquals(command.getInter(),rpn);
 	}
+	
+	@Test 
+	public void testExecuteMultiplication()
+	{
+		MoteurRPN rpn = new MoteurRPN();
+		Multiplication m =new Multiplication(rpn);
+		rpn.enregistrerOprnd(3);
+		rpn.enregistrerOprnd(2);
+		m.execute();
+		int x=rpn.getListOperande().get(0);
+		assertEquals(x,6);
+	}
 
 }

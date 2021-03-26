@@ -12,5 +12,18 @@ public class AdditionTest extends TestCase {
 		Addition command = new Addition(rpn);
 		assertEquals(command.getInter(),rpn);
 	}
+	
+	@Test 
+	public void testExecuterAddition()
+	{
+		MoteurRPN rpn = new MoteurRPN();
+		Addition a =new Addition(rpn);
+		rpn.enregistrerOprnd(1);
+		rpn.enregistrerOprnd(2);
+		a.execute();
+		int x=rpn.getListOperande().get(0);
+		assertEquals(x,3);
+		
+	}
 
 }
