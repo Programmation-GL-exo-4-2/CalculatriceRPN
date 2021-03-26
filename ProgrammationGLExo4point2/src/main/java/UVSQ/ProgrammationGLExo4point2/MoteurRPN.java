@@ -20,7 +20,48 @@ public class MoteurRPN extends Interpreteur{
 	
 	public void operationOprnd()
 	{
-		
+		if(dernierSaisie=="+")
+		{
+			int taille=this.listOperande.size();
+			int oprnd1=this.listOperande.get(taille-2);
+			int oprnd2=this.listOperande.get(taille-1);
+			int rsult=oprnd1+oprnd2;
+			this.listOperande.remove(taille-1);
+			this.listOperande.remove(taille-2);
+			this.listOperande.add(rsult);
+			
+		}
+		else if(dernierSaisie=="-")
+		{
+			int taille=this.listOperande.size();
+			int oprnd1=this.listOperande.get(taille-2);
+			int oprnd2=this.listOperande.get(taille-1);
+			int rsult=oprnd1-oprnd2;
+			this.listOperande.remove(taille-1);
+			this.listOperande.remove(taille-2);
+			this.listOperande.add(rsult);
+		}
+		else if(dernierSaisie=="*")
+		{
+			int taille=this.listOperande.size();
+			int oprnd1=this.listOperande.get(taille-2);
+			int oprnd2=this.listOperande.get(taille-1);
+			int rsult=oprnd1*oprnd2;
+			this.listOperande.remove(taille-1);
+			this.listOperande.remove(taille-2);
+			this.listOperande.add(rsult);
+		}
+		else if(dernierSaisie=="/")
+		{
+			int taille=this.listOperande.size();
+			int oprnd1=this.listOperande.get(taille-2);
+			int oprnd2=this.listOperande.get(taille-1);
+			int rsult=oprnd1/oprnd2;
+			this.listOperande.remove(taille-1);
+			this.listOperande.remove(taille-2);
+			this.listOperande.add(rsult);
+		}	
+			
 	}
 	public ArrayList<Integer> getEnsembleOpnd()
 	{

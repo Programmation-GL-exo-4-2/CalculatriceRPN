@@ -79,11 +79,11 @@ public class MoteurRPNTest {
 	public void testOperationOprndDiv()
 	{
 		MoteurRPN rpn=new MoteurRPN();
-		rpn.setSaisie("4");
-		rpn.enregistrerOprnd();
 		rpn.setSaisie("8");
 		rpn.enregistrerOprnd();
-		rpn.setSaisie("+");
+		rpn.setSaisie("4");
+		rpn.enregistrerOprnd();
+		rpn.setSaisie("/");
 		rpn.operationOprnd();
 		int x=0;
 		if(!rpn.getListOperande().isEmpty())
