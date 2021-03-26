@@ -18,7 +18,7 @@ public class MoteurRPN extends Interpreteur{
 		listOperande.add(Integer.parseInt(dernierSaisie));
 	}
 	
-	public void operationOprnd(int op)
+	public void operationOprnd()
 	{
 		
 	}
