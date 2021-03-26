@@ -7,7 +7,11 @@ import org.junit.Test;
 public class EnregistrerOprndTest {
 
 	@Test
-	public void testConstructeurEng() {
+	public void testConstructeurEng() 
+	{
+		MoteurRPN rpn = new MoteurRPN();
+		Addition command = new Addition(rpn);
+		assertEquals(command.getInter(),rpn);
 	}
 
 }

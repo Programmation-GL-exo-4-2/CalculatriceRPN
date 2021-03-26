@@ -14,7 +14,7 @@ public class AdditionTest extends TestCase {
 	}
 	
 	@Test 
-	public void testExecuterAddition()
+	public void testExecuteAddition()
 	{
 		MoteurRPN rpn = new MoteurRPN();
 		Addition a =new Addition(rpn);
@@ -23,7 +23,6 @@ public class AdditionTest extends TestCase {
 		a.execute();
 		int x=rpn.getListOperande().get(0);
 		assertEquals(x,3);
-		
 	}
 
 }
