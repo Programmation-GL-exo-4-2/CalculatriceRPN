@@ -16,7 +16,7 @@ public class MoteurRPNTest {
 	public void testEnregistrerOprnd()
 	{
 		MoteurRPN rpn=new MoteurRPN();
-		rpn.enregistrerOprnd(5);
+		rpn.getEnsembleOpnd().add(5);
 		int x=rpn.getListOperande().get(0);
 		assertEquals(5,x);
 		

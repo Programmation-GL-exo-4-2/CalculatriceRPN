@@ -18,8 +18,8 @@ public class AdditionTest extends TestCase {
 	{
 		MoteurRPN rpn = new MoteurRPN();
 		Addition a =new Addition(rpn);
-		rpn.enregistrerOprnd(1);
-		rpn.enregistrerOprnd(2);
+		rpn.getEnsembleOpnd().add(1);
+		rpn.getEnsembleOpnd().add(2);
 		a.execute();
 		int x=rpn.getListOperande().get(0);
 		assertEquals(x,3);
