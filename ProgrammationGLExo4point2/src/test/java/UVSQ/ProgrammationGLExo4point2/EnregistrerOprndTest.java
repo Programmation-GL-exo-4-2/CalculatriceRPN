@@ -19,7 +19,7 @@ public class EnregistrerOprndTest {
 	{
 		MoteurRPN rpn = new MoteurRPN();
 		EnregistrerOprnd eng =new EnregistrerOprnd(rpn);
-		rpn.setSaisie('1');
+		rpn.setSaisie("1");
 		eng.execute();
 		int x=0;
 		if(!rpn.getListOperande().isEmpty())

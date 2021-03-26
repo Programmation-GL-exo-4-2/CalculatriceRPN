@@ -6,6 +6,8 @@ public class Addition extends AbstractCommandClass implements Command {
 	{
 		this.setInter(rpn);
 	}
+	
+	
 	public void execute() {
 		// TODO Auto-generated method stub
 		

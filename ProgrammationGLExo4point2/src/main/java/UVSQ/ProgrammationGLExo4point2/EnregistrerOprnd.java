@@ -6,9 +6,13 @@ public class EnregistrerOprnd extends AbstractCommandClass implements Command {
 	{
 		this.setInter(rpn);
 	}
-	public void execute() {
-		// TODO Auto-generated method stub
-		
+	
+	public MoteurRPN getRpn() {
+		return (MoteurRPN)this.getInter();
+	}
+	public void execute() 
+	{
+		this.getRpn().enregistrerOprnd();
 	}
 
 }

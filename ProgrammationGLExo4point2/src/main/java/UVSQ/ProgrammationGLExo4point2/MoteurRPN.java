@@ -5,16 +5,17 @@ import java.util.ArrayList;
 public class MoteurRPN extends Interpreteur{
 	
 	private ArrayList<Integer> listOperande;
-	private char dernierSaisie;
+	private String dernierSaisie;
 	//constructeur
 	public MoteurRPN() 
 	{
 		listOperande = new ArrayList<Integer>();
 	}
 	
-	public void enregistrerOprnd(int oprnd) 
+	public void enregistrerOprnd() 
 	{
-		listOperande.add(oprnd);
+		
+		listOperande.add(Integer.parseInt(dernierSaisie));
 	}
 	
 	public void operationOprnd(int op)
@@ -36,12 +37,12 @@ public class MoteurRPN extends Interpreteur{
 		listOperande = listOperande;
 	}
 	
-	public char getSaisie()
+	public String getSaisie()
 	{
 		return this.dernierSaisie;
 	}
 	
-	public void setSaisie(char a)
+	public void setSaisie(String a)
 	{
 		this.dernierSaisie=a;
 	}
