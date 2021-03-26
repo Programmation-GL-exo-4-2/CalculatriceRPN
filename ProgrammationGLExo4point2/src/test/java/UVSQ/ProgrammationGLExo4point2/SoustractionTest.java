@@ -23,7 +23,7 @@ public class SoustractionTest {
 		s.getRpn().enregistrerOprnd();
 		s.getRpn().setSaisie("2");
 		s.getRpn().enregistrerOprnd();
-		s.execute();
+		s.getRpn().setSaisie("-");
 		s.execute();
 		int x=rpn.getListOperande().get(0);
 		assertEquals(x,1);

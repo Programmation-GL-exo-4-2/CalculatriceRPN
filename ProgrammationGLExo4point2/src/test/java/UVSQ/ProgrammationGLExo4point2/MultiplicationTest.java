@@ -22,7 +22,7 @@ public class MultiplicationTest {
 		m.getRpn().enregistrerOprnd();
 		m.getRpn().setSaisie("2");
 		m.getRpn().enregistrerOprnd();
-		m.execute();
+		m.getRpn().setSaisie("*");
 		m.execute();
 		int x=rpn.getListOperande().get(0);
 		assertEquals(x,6);

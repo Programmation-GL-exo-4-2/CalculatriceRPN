@@ -9,8 +9,7 @@ public class Addition extends CommandClass implements Command {
 	
 	
 	public void execute() {
-		// TODO Auto-generated method stub
-		
+		this.getRpn().operationOprnd();
 	}
 
 }

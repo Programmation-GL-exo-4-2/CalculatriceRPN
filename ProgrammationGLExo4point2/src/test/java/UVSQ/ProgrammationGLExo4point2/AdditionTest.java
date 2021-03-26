@@ -22,6 +22,7 @@ public class AdditionTest extends TestCase {
 		a.getRpn().enregistrerOprnd();
 		a.getRpn().setSaisie("2");
 		a.getRpn().enregistrerOprnd();
+		a.getRpn().setSaisie("+");
 		a.execute();
 		int x=rpn.getListOperande().get(0);
 		assertEquals(x,3);

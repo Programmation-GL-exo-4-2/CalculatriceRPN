@@ -7,8 +7,7 @@ public class Multiplication extends CommandClass implements Command{
 		this.setInter(rpn);
 	}
 	public void execute() {
-		// TODO Auto-generated method stub
-		
+		this.getRpn().operationOprnd();
 	}
 
 }

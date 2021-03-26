@@ -7,8 +7,7 @@ public class Division extends CommandClass implements Command {
 	}
 
 	public void execute() {
-		// TODO Auto-generated method stub
-		
+		this.getRpn().operationOprnd();
 	}
 
 }
