@@ -87,4 +87,10 @@ public class MoteurRPN extends Interpreteur{
 	{
 		this.dernierSaisie=a;
 	}
+	@Override
+	public String toString() 
+	{
+		
+		return "";
+	}
 }
