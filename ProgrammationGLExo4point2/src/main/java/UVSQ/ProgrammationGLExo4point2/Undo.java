@@ -9,7 +9,6 @@ public class Undo extends AbstractCommandClass implements Command{
 	public void execute() 
 	{
 		//à faire plus tard
-		
 	}
 
 }
