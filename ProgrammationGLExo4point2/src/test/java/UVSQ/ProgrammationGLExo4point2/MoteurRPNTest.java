@@ -92,6 +92,7 @@ public class MoteurRPNTest {
 		
 	}
 	
+	@Test
 	public void testToString()
 	{
 		MoteurRPN rpn=new MoteurRPN();
@@ -99,8 +100,8 @@ public class MoteurRPNTest {
 		rpn.enregistrerOprnd();
 		rpn.setSaisie("4");
 		rpn.enregistrerOprnd();
-		
-		assertEquals("4-8",rpn.toString());
+		System.out.print(rpn.toString());
+		assertEquals("8 4",rpn.toString());
 	}
 
 }

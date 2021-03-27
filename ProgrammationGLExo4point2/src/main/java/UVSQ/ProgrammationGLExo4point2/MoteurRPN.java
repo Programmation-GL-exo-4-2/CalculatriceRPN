@@ -90,7 +90,13 @@ public class MoteurRPN extends Interpreteur{
 	@Override
 	public String toString() 
 	{
+		String str = "";
+		str += listOperande.get(0);
 		
-		return "";
+		for(int i = 1 ; i < listOperande.size() ; i++)
+		{
+			str += " " + listOperande.get(i); 
+		}
+		return str;
 	}
 }
