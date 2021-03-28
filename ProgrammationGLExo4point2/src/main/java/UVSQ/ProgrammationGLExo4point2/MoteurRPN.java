@@ -20,7 +20,8 @@ public class MoteurRPN extends Interpreteur{
 	
 	public void supprimerOprnd()
 	{
-		
+		int lastx=listOperande.size()-1;
+		listOperande.remove(lastx);
 	};
 	
 	public void operationOprnd()

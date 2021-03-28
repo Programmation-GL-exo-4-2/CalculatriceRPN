@@ -112,8 +112,8 @@ public class MoteurRPNTest {
 		rpn.enregistrerOprnd();
 		rpn.setSaisie("4");
 		rpn.enregistrerOprnd();
-		int lastindex=rpn.getListOperande().size()-1;
-		int x=rpn.getListOperande().get(lastindex);
+		rpn.supprimerOprnd();
+		int x=rpn.getListOperande().get(0);
 		assertEquals(8,x);
 	}
 	
