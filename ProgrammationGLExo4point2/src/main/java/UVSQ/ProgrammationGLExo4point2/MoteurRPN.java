@@ -1,11 +1,13 @@
 package UVSQ.ProgrammationGLExo4point2;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class MoteurRPN extends Interpreteur{
 	
 	private ArrayList<Integer> listOperande;
 	private String dernierSaisie;
+	private Stack<Integer> _undo=new Stack<Integer>();
 	//constructeur
 	public MoteurRPN() 
 	{
@@ -16,12 +18,14 @@ public class MoteurRPN extends Interpreteur{
 	{
 		
 		listOperande.add(Integer.parseInt(dernierSaisie));
+		this._undo.push(Integer.parseInt(dernierSaisie));
 	}
 	
 	public void supprimerOprnd()
 	{
 		int lastx=listOperande.size()-1;
 		listOperande.remove(lastx);
+		this._undo.pop();
 	};
 	
 	public void operationOprnd()
@@ -41,6 +45,8 @@ public class MoteurRPN extends Interpreteur{
 			this.listOperande.remove(taille-1);
 			this.listOperande.remove(taille-2);
 			this.listOperande.add(rsult);
+			this._undo.push(rsult);
+			
 			
 	}
 	public ArrayList<Integer> getEnsembleOpnd()
@@ -53,7 +59,11 @@ public class MoteurRPN extends Interpreteur{
 	public ArrayList<Integer> getListOperande() {
 		return listOperande;
 	}
-
+	public Stack<Integer> getUndo()
+	{
+		return this._undo;
+	}
+ 
 	public void setListOperande(ArrayList<Integer> listOperande) {
 		listOperande = listOperande;
 	}

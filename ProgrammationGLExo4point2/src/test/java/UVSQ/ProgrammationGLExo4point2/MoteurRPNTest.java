@@ -20,6 +20,8 @@ public class MoteurRPNTest {
 		rpn.enregistrerOprnd();
 		int x=rpn.getListOperande().get(0);
 		assertEquals(5,x);
+		int y=rpn.getUndo().peek();
+		assertEquals(5,y);
 		
 	}
 	
@@ -37,6 +39,8 @@ public class MoteurRPNTest {
 		if(!rpn.getListOperande().isEmpty())
 			x=rpn.getListOperande().get(0);
 		assertEquals(3,x);
+		int y=rpn.getUndo().peek();
+		assertEquals(3,y);
 		
 	}
 	
@@ -55,6 +59,8 @@ public class MoteurRPNTest {
 		if(!rpn.getListOperande().isEmpty())
 			x=rpn.getListOperande().get(0);
 		assertEquals(1,x);
+		int y=rpn.getUndo().peek();
+		assertEquals(1,y);
 		
 	}
 	
@@ -72,6 +78,8 @@ public class MoteurRPNTest {
 		if(!rpn.getListOperande().isEmpty())
 			x=rpn.getListOperande().get(0);
 		assertEquals(6,x);
+		int y=rpn.getUndo().peek();
+		assertEquals(6,y);
 		
 	}
 	
@@ -89,6 +97,8 @@ public class MoteurRPNTest {
 		if(!rpn.getListOperande().isEmpty())
 			x=rpn.getListOperande().get(0);
 		assertEquals(2,x);
+		int y=rpn.getUndo().peek();
+		assertEquals(2,y);
 		
 	}
 	
@@ -115,6 +125,8 @@ public class MoteurRPNTest {
 		rpn.supprimerOprnd();
 		int x=rpn.getListOperande().get(0);
 		assertEquals(8,x);
+		int y=rpn.getUndo().peek();
+		assertEquals(8,y);
 	}
 	
 	
