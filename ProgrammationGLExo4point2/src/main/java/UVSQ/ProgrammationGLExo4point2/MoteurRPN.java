@@ -18,6 +18,11 @@ public class MoteurRPN extends Interpreteur{
 		listOperande.add(Integer.parseInt(dernierSaisie));
 	}
 	
+	public void supprimerOprnd()
+	{
+		
+	};
+	
 	public void operationOprnd()
 	{
 			int taille=this.listOperande.size();

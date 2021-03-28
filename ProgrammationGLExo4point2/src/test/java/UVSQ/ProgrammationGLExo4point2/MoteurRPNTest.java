@@ -103,5 +103,20 @@ public class MoteurRPNTest {
 		System.out.print(rpn.toString());
 		assertEquals("8 4",rpn.toString());
 	}
+	
+	@Test
+	public void testSupprimeOprnd()
+	{
+		MoteurRPN rpn=new MoteurRPN();
+		rpn.setSaisie("8");
+		rpn.enregistrerOprnd();
+		rpn.setSaisie("4");
+		rpn.enregistrerOprnd();
+		int lastindex=rpn.getListOperande().size()-1;
+		int x=rpn.getListOperande().get(lastindex);
+		assertEquals(8,x);
+	}
+	
+	
 
 }
