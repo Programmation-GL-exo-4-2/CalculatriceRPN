@@ -20,6 +20,11 @@ public class MoteurRPN extends Interpreteur{
 		listOperande.add(Integer.parseInt(dernierSaisie));
 		this._undo.push(Integer.parseInt(dernierSaisie));
 	}
+	public void enregistrerOprndUndo() 
+	{
+		
+		listOperande.add(Integer.parseInt(dernierSaisie));
+	}
 	
 	public void supprimerOprnd()
 	{
