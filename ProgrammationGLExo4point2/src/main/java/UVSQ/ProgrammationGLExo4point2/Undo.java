@@ -10,5 +10,9 @@ public class Undo extends AbstractCommandClass implements Command{
 	{
 		//à faire plus tard
 	}
+	public void undo() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

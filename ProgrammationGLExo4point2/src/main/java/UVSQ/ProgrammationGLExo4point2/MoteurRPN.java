@@ -1,10 +1,12 @@
 package UVSQ.ProgrammationGLExo4point2;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class MoteurRPN extends Interpreteur{
 	
 	private ArrayList<Integer> listOperande;
+	private Stack<ArrayList<Integer>> _undo=new Stack<ArrayList<Integer>>();
 	private String dernierSaisie;
 	//constructeur
 	public MoteurRPN() 
@@ -14,7 +16,6 @@ public class MoteurRPN extends Interpreteur{
 	
 	public void enregistrerOprnd() 
 	{
-		
 		listOperande.add(Integer.parseInt(dernierSaisie));
 	}
 	
