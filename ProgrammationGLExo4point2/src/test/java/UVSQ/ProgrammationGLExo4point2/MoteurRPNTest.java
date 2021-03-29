@@ -7,7 +7,7 @@ import org.junit.Test;
 public class MoteurRPNTest {
 
 	@Test
-	public void test() {
+	public void testConstructeur() {
 		MoteurRPN m = new MoteurRPN();
 		assertNotEquals(null, m.getListOperande());
 	}
@@ -20,6 +20,7 @@ public class MoteurRPNTest {
 		rpn.enregistrerOprnd();
 		int x=rpn.getListOperande().get(0);
 		assertEquals(5,x);
+		assertEquals(rpn.getListOperande(),rpn.getStackUndo().peek());
 		
 	}
 	

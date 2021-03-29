@@ -12,11 +12,13 @@ public class MoteurRPN extends Interpreteur{
 	public MoteurRPN() 
 	{
 		listOperande = new ArrayList<Integer>();
+		_undo.push(null);
 	}
 	
 	public void enregistrerOprnd() 
 	{
 		listOperande.add(Integer.parseInt(dernierSaisie));
+		_undo.push(listOperande);
 	}
 	
 	public void operationOprnd()
@@ -73,5 +75,10 @@ public class MoteurRPN extends Interpreteur{
 			str += " " + listOperande.get(i); 
 		}
 		return str;
+	}
+	
+	public Stack<ArrayList<Integer>> getStackUndo()
+	{
+		return this._undo;
 	}
 }

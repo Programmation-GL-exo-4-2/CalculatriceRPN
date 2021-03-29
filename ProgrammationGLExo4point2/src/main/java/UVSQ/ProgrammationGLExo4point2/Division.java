@@ -10,4 +10,9 @@ public class Division extends CommandClass implements Command {
 		this.getRpn().operationOprnd();
 	}
 
+	public void undo() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -13,4 +13,10 @@ public class EnregistrerOprnd extends CommandClass implements Command {
 		this.getRpn().enregistrerOprnd();
 	}
 
+
+	public void undo() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
