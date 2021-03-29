@@ -8,7 +8,9 @@ public class SaisieRPNTest {
 
 	@Test
 	public void testEvaluerSaisie() {
-		fail("Not yet implemented");
+		SaisieRPN s = new SaisieRPN();
+		s.evaluerSaisie();
+		
 	}
 
 }
