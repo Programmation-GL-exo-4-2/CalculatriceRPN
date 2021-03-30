@@ -80,6 +80,7 @@ public class MoteurRPNTest {
 		if(!rpn.getListOperande().isEmpty())
 			x=rpn.getListOperande().get(0);
 		assertEquals(1,x);
+		assertEquals(rpn.toString(),rpn.getStackUndo().get(2));
 		
 	}
 	
@@ -97,6 +98,7 @@ public class MoteurRPNTest {
 		if(!rpn.getListOperande().isEmpty())
 			x=rpn.getListOperande().get(0);
 		assertEquals(6,x);
+		assertEquals(rpn.toString(),rpn.getStackUndo().get(2));
 		
 	}
 	
@@ -114,6 +116,7 @@ public class MoteurRPNTest {
 		if(!rpn.getListOperande().isEmpty())
 			x=rpn.getListOperande().get(0);
 		assertEquals(2,x);
+		assertEquals(rpn.toString(),rpn.getStackUndo().get(2));
 		
 	}
 	

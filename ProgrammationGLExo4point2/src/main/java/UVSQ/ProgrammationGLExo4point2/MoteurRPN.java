@@ -43,7 +43,13 @@ public class MoteurRPN extends Interpreteur{
 			this.listOperande.remove(taille-1);
 			this.listOperande.remove(taille-2);
 			this.listOperande.add(rsult);
-			
+			String x="";
+			x+=listOperande.get(0);
+			for(int i=1;i<listOperande.size();i++)
+			{
+				x+=" "+listOperande.get(i);
+			}
+			_undo.add(x);
 			
 	}
 	public ArrayList<Integer> getEnsembleOpnd()
