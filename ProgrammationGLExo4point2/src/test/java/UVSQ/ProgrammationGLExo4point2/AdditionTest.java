@@ -27,5 +27,20 @@ public class AdditionTest extends TestCase {
 		int x=rpn.getListOperande().get(0);
 		assertEquals(x,3);
 	}
+	
+	@Test 
+	public void testUndoAddition()
+	{
+		MoteurRPN rpn = new MoteurRPN();
+		Addition a =new Addition(rpn);
+		a.getRpn().setSaisie("1");
+		a.getRpn().enregistrerOprnd();
+		a.getRpn().setSaisie("2");
+		a.getRpn().enregistrerOprnd();
+		a.getRpn().setSaisie("+");
+		a.execute();
+		a.undo();
+		assertEquals(a.getRpn().toString(),"1 2");
+	}
 
 }

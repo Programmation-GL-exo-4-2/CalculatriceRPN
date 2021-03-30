@@ -64,7 +64,11 @@ public class MoteurRPN extends Interpreteur{
 	}
 
 	public void setListOperande(ArrayList<Integer> listOperande) {
-		listOperande = listOperande;
+		this.listOperande.removeAll(this.listOperande);
+		for(int i=0;i<listOperande.size();i++)
+		{
+			this.listOperande.add(listOperande.get(i));
+		}
 	}
 	
 	public String getSaisie()
@@ -94,15 +98,20 @@ public class MoteurRPN extends Interpreteur{
 		return this._undo;
 	}
 	
+	public void removeStackUndoLastI()
+	{
+		this._undo.remove(this._undo.size()-1);
+	}
+	
 	public ArrayList<Integer> stringToArrayInteger(String s)
 	{
 		ArrayList<Integer>a=new ArrayList<Integer>();
 		String [] nombre =s.split(" ");
 		for(int i=0;i<nombre.length;i++)
 		{
-			listOperande.add(Integer.parseInt(nombre[i].toString()));
+			a.add(Integer.parseInt(nombre[i].toString()));
 		}
-		return new ArrayList<Integer>();
+		return a;
 	}
 	
 	
