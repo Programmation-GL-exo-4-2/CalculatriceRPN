@@ -20,7 +20,6 @@ public class MoteurRPNTest {
 		MoteurRPN rpn=new MoteurRPN();
 		String s="12 13 1";
 		rpn.setListOperande(rpn.stringToArrayInteger(s));
-		System.out.println(rpn.getListOperande().toString());
 		assertEquals("[12, 13, 1]",rpn.getListOperande().toString());
 	}
 	
@@ -33,19 +32,20 @@ public class MoteurRPNTest {
 		MoteurRPN rpn=new MoteurRPN();
 		rpn.setSaisie("5");
 		rpn.enregistrerOprnd();
-		assertEquals("[5]",rpn.getListOperande().toString());
-		assertEquals("5",rpn.getStackUndo().get(0).toString());
+		System.out.println(rpn.toString());
+		System.out.println(rpn.getStackUndo().get(0).toString());
+		assertEquals("5",rpn.toString());
+		assertEquals(rpn.toString(),rpn.getStackUndo().get(0).toString());
 		rpn.setSaisie("6");
 		rpn.enregistrerOprnd();
-		assertEquals("[5, 6]",rpn.getListOperande().toString());
-		assertEquals("5 6",rpn.getStackUndo().get(0).toString());
+		System.out.println(rpn.toString());
+		assertEquals("5 6",rpn.toString());
+		assertEquals(rpn.toString(),rpn.getStackUndo().get(1).toString());
 		rpn.setSaisie("7");
 		rpn.enregistrerOprnd();
-		assertEquals("[5, 6, 7]",rpn.getListOperande().toString());
-		assertEquals("5 6 7",rpn.getStackUndo().get(0).toString());
-		int x=rpn.getListOperande().get(0);
-		assertEquals(5,x);
-		assertEquals(rpn.getListOperande(),rpn.getStackUndo().get(0));
+		assertEquals("5 6 7",rpn.toString());
+		assertEquals(rpn.toString(),rpn.getStackUndo().get(2).toString());
+		
 		
 	}
 	
