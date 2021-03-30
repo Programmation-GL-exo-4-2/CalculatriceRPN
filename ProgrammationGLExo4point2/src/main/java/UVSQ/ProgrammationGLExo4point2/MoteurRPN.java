@@ -6,19 +6,19 @@ import java.util.Stack;
 public class MoteurRPN extends Interpreteur{
 	
 	private ArrayList<Integer> listOperande;
-	private Stack<ArrayList<Integer>> _undo=new Stack<ArrayList<Integer>>();
+	private ArrayList<String> _undo=new ArrayList<String>();
 	private String dernierSaisie;
-	//constructeur
 	public MoteurRPN() 
 	{
 		listOperande = new ArrayList<Integer>();
-		_undo.push(null);
+		
 	}
 	
 	public void enregistrerOprnd() 
 	{
 		listOperande.add(Integer.parseInt(dernierSaisie));
-		_undo.push(listOperande);
+		//_undo.push(this.listOperande);
+		_undo.add(listOperande.toString());
 	}
 	
 	public void operationOprnd()
@@ -77,7 +77,7 @@ public class MoteurRPN extends Interpreteur{
 		return str;
 	}
 	
-	public Stack<ArrayList<Integer>> getStackUndo()
+	public ArrayList<String> getStackUndo()
 	{
 		return this._undo;
 	}
