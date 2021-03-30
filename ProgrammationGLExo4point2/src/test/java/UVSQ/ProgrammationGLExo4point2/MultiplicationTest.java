@@ -27,5 +27,20 @@ public class MultiplicationTest {
 		int x=rpn.getListOperande().get(0);
 		assertEquals(x,6);
 	}
+	
+	@Test 
+	public void testUndoMultiplication()
+	{
+		MoteurRPN rpn = new MoteurRPN();
+		Division d =new Division(rpn);
+		d.getRpn().setSaisie("3");
+		d.getRpn().enregistrerOprnd();
+		d.getRpn().setSaisie("2");
+		d.getRpn().enregistrerOprnd();
+		d.getRpn().setSaisie("*");
+		d.execute();
+		d.undo();
+		assertEquals(d.getRpn().toString(),"3 2");
+	}
 
 }

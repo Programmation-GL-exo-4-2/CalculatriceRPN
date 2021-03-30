@@ -114,5 +114,14 @@ public class MoteurRPN extends Interpreteur{
 		return a;
 	}
 	
+	public void annuler()
+	{
+		this.removeStackUndoLastI();
+		int lastI=this.getStackUndo().size()-1;
+		String x=this.getStackUndo().get(lastI);
+		ArrayList<Integer> a=this.stringToArrayInteger(x);
+		this.setListOperande(a);
+	}
+	
 	
 }

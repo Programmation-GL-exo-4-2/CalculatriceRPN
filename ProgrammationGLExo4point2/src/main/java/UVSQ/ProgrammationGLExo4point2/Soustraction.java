@@ -9,9 +9,9 @@ public class Soustraction extends CommandClass implements Command{
 	public void execute() {
 		this.getRpn().operationOprnd();	
 	}
-	public void undo() {
-		// TODO Auto-generated method stub
-		
+	public void undo() 
+	{
+		this.getRpn().annuler();
 	}
 
 }
