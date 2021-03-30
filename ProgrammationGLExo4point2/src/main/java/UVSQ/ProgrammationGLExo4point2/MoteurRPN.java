@@ -84,6 +84,12 @@ public class MoteurRPN extends Interpreteur{
 	
 	public ArrayList<Integer> stringToArrayInteger(String s)
 	{
+		ArrayList<Integer>a=new ArrayList<Integer>();
+		String [] nombre =s.split(" ");
+		for(int i=0;i<nombre.length;i++)
+		{
+			listOperande.add(Integer.parseInt(nombre[i].toString()));
+		}
 		return new ArrayList<Integer>();
 	}
 	

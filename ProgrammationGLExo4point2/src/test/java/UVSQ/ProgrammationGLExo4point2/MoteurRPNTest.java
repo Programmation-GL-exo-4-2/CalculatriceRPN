@@ -15,11 +15,13 @@ public class MoteurRPNTest {
 	}
 	
 	@Test
-	public void teststringToArrayInteger()
+	public void testStringToArrayInteger()
 	{
-		ArrayList<Integer> a=new ArrayList<Integer>();
-		a.add(1);
-		a.add(2);
+		MoteurRPN rpn=new MoteurRPN();
+		String s="12 13 1";
+		rpn.setListOperande(rpn.stringToArrayInteger(s));
+		System.out.println(rpn.getListOperande().toString());
+		assertEquals("[12, 13, 1]",rpn.getListOperande().toString());
 	}
 	
 	
