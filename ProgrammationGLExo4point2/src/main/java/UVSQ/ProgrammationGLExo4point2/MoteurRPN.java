@@ -81,4 +81,11 @@ public class MoteurRPN extends Interpreteur{
 	{
 		return this._undo;
 	}
+	
+	public ArrayList<Integer> stringToArrayInteger(String s)
+	{
+		return new ArrayList<Integer>();
+	}
+	
+	
 }

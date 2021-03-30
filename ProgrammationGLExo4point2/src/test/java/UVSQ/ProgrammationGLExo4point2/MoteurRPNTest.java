@@ -2,6 +2,8 @@ package UVSQ.ProgrammationGLExo4point2;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 public class MoteurRPNTest {
@@ -13,6 +15,17 @@ public class MoteurRPNTest {
 	}
 	
 	@Test
+	public void teststringToArrayInteger()
+	{
+		ArrayList<Integer> a=new ArrayList<Integer>();
+		a.add(1);
+		a.add(2);
+	}
+	
+	
+	
+	
+	/*@Test
 	public void testEnregistrerOprnd()
 	{
 		MoteurRPN rpn=new MoteurRPN();
@@ -33,7 +46,7 @@ public class MoteurRPNTest {
 		assertEquals(rpn.getListOperande(),rpn.getStackUndo().get(0));
 		
 	}
-	/*
+	
 	@Test
 	public void testOperationOprndAdd()
 	{
