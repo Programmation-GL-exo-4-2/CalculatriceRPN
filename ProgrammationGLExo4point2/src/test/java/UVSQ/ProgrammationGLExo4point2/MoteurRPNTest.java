@@ -27,28 +27,29 @@ public class MoteurRPNTest {
 	
 	
 	
-	/*@Test
+	@Test
 	public void testEnregistrerOprnd()
 	{
 		MoteurRPN rpn=new MoteurRPN();
 		rpn.setSaisie("5");
 		rpn.enregistrerOprnd();
-		System.out.println(rpn.getListOperande().toString());
-		System.out.println(rpn.getStackUndo().toString());
+		assertEquals("[5]",rpn.getListOperande().toString());
+		assertEquals("5",rpn.getStackUndo().get(0).toString());
 		rpn.setSaisie("6");
 		rpn.enregistrerOprnd();
-		System.out.println(rpn.getListOperande().toString());
-		System.out.println(rpn.getStackUndo().toString());
+		assertEquals("[5, 6]",rpn.getListOperande().toString());
+		assertEquals("5 6",rpn.getStackUndo().get(0).toString());
 		rpn.setSaisie("7");
 		rpn.enregistrerOprnd();
-		System.out.println(rpn.getListOperande().toString());
-		System.out.println(rpn.getStackUndo().toString());
+		assertEquals("[5, 6, 7]",rpn.getListOperande().toString());
+		assertEquals("5 6 7",rpn.getStackUndo().get(0).toString());
 		int x=rpn.getListOperande().get(0);
 		assertEquals(5,x);
 		assertEquals(rpn.getListOperande(),rpn.getStackUndo().get(0));
 		
 	}
 	
+	/*
 	@Test
 	public void testOperationOprndAdd()
 	{
