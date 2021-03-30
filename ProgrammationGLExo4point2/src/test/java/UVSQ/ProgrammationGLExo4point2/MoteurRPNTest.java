@@ -32,13 +32,10 @@ public class MoteurRPNTest {
 		MoteurRPN rpn=new MoteurRPN();
 		rpn.setSaisie("5");
 		rpn.enregistrerOprnd();
-		System.out.println(rpn.toString());
-		System.out.println(rpn.getStackUndo().get(0).toString());
 		assertEquals("5",rpn.toString());
 		assertEquals(rpn.toString(),rpn.getStackUndo().get(0).toString());
 		rpn.setSaisie("6");
-		rpn.enregistrerOprnd();
-		System.out.println(rpn.toString());
+		rpn.enregistrerOprnd();		
 		assertEquals("5 6",rpn.toString());
 		assertEquals(rpn.toString(),rpn.getStackUndo().get(1).toString());
 		rpn.setSaisie("7");
@@ -49,7 +46,7 @@ public class MoteurRPNTest {
 		
 	}
 	
-	/*
+	
 	@Test
 	public void testOperationOprndAdd()
 	{
@@ -64,6 +61,7 @@ public class MoteurRPNTest {
 		if(!rpn.getListOperande().isEmpty())
 			x=rpn.getListOperande().get(0);
 		assertEquals(3,x);
+		assertEquals(rpn.toString(),rpn.getStackUndo().get(2));
 		
 	}
 	
@@ -129,6 +127,6 @@ public class MoteurRPNTest {
 		rpn.enregistrerOprnd();
 		System.out.print(rpn.toString());
 		assertEquals("8 4",rpn.toString());
-	}*/
+	}
 
 }

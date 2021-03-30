@@ -17,7 +17,6 @@ public class MoteurRPN extends Interpreteur{
 	public void enregistrerOprnd() 
 	{
 		listOperande.add(Integer.parseInt(dernierSaisie));
-		//_undo.push(this.listOperande);
 		String x="";
 		x+=listOperande.get(0);
 		for(int i=1;i<listOperande.size();i++)
@@ -44,6 +43,7 @@ public class MoteurRPN extends Interpreteur{
 			this.listOperande.remove(taille-1);
 			this.listOperande.remove(taille-2);
 			this.listOperande.add(rsult);
+			
 			
 	}
 	public ArrayList<Integer> getEnsembleOpnd()
