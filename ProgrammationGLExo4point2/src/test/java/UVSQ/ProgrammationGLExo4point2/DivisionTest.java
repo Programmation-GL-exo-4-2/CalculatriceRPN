@@ -27,7 +27,6 @@ public class DivisionTest {
 		int x=rpn.getListOperande().get(0);
 		assertEquals(x,2);
 	}
-<<<<<<< HEAD
 	
 	@Test 
 	public void testUndoDivision()
@@ -43,26 +42,5 @@ public class DivisionTest {
 		d.undo();
 		assertEquals(d.getRpn().toString(),"4 2");
 	}
-||||||| 1ea3cd9
-=======
-	
-	@Test 
-	public void testUndoDivision()
-	{
-		MoteurRPN rpn = new MoteurRPN();
-		Division d =new Division(rpn);
-		d.getRpn().setSaisie("4");
-		d.getRpn().enregistrerOprnd();
-		d.getRpn().setSaisie("2");
-		d.getRpn().enregistrerOprnd();
-		d.getRpn().setSaisie("/");
-		d.execute();
-		d.undo();
-		assertEquals("4 2",d.getRpn().toString());
-	}
-	
-	
-	
->>>>>>> main
 
 }

@@ -8,13 +8,6 @@ public class MoteurRPN extends Interpreteur{
 	private ArrayList<Integer> listOperande;
 	private ArrayList<String> _undo=new ArrayList<String>();
 	private String dernierSaisie;
-<<<<<<< HEAD
-||||||| 1ea3cd9
-	//constructeur
-=======
-	private Stack<Integer> _undo=new Stack<Integer>();
-	//constructeur
->>>>>>> main
 	public MoteurRPN() 
 	{
 		listOperande = new ArrayList<Integer>();
@@ -24,7 +17,7 @@ public class MoteurRPN extends Interpreteur{
 	public void enregistrerOprnd() 
 	{
 		listOperande.add(Integer.parseInt(dernierSaisie));
-<<<<<<< HEAD
+
 		String x="";
 		x+=listOperande.get(0);
 		for(int i=1;i<listOperande.size();i++)
@@ -32,23 +25,8 @@ public class MoteurRPN extends Interpreteur{
 			x+=" "+listOperande.get(i);
 		}
 		_undo.add(x);
-||||||| 1ea3cd9
-=======
-		this._undo.push(Integer.parseInt(dernierSaisie));
-	}
-	public void enregistrerOprndUndo() 
-	{
-		
-		listOperande.add(Integer.parseInt(dernierSaisie));
->>>>>>> main
 	}
 	
-	public void supprimerOprnd()
-	{
-		int lastx=listOperande.size()-1;
-		listOperande.remove(lastx);
-		this._undo.pop();
-	};
 	
 	public void operationOprnd()
 	{
@@ -67,7 +45,7 @@ public class MoteurRPN extends Interpreteur{
 			this.listOperande.remove(taille-1);
 			this.listOperande.remove(taille-2);
 			this.listOperande.add(rsult);
-<<<<<<< HEAD
+
 			String x="";
 			x+=listOperande.get(0);
 			for(int i=1;i<listOperande.size();i++)
@@ -75,32 +53,6 @@ public class MoteurRPN extends Interpreteur{
 				x+=" "+listOperande.get(i);
 			}
 			_undo.add(x);
-||||||| 1ea3cd9
-=======
-			this._undo.push(rsult);
-			
-			
-	}
-	
-	public void operationOprndUndo()
-	{
-			int taille=this.listOperande.size();
-			int oprnd1=this.listOperande.get(taille-2);
-			int oprnd2=this.listOperande.get(taille-1);
-			int rsult=0;
-			if(dernierSaisie=="+")
-				rsult=oprnd1+oprnd2;
-			else if(dernierSaisie=="-")
-				rsult=oprnd1-oprnd2;
-			else if(dernierSaisie=="*")
-				rsult=oprnd1*oprnd2;
-			else if(dernierSaisie=="/")
-				rsult=oprnd1/oprnd2;
-			this.listOperande.remove(taille-1);
-			this.listOperande.remove(taille-2);
-			this.listOperande.add(rsult);
-			
->>>>>>> main
 			
 	}
 	public ArrayList<Integer> getEnsembleOpnd()
@@ -112,10 +64,6 @@ public class MoteurRPN extends Interpreteur{
 
 	public ArrayList<Integer> getListOperande() {
 		return listOperande;
-	}
-	public Stack<Integer> getUndo()
-	{
-		return this._undo;
 	}
  
 	public void setListOperande(ArrayList<Integer> listOperande) {

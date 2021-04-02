@@ -26,7 +26,7 @@ public class EnregistrerOprndTest {
 			x=eng.getRpn().getListOperande().get(0);
 		assertEquals(x,1);
 	}
-<<<<<<< HEAD
+
 	
 	@Test 
 	public void testUndoEnregistrer()
@@ -43,24 +43,6 @@ public class EnregistrerOprndTest {
 	}
 	
 	
-||||||| 1ea3cd9
-=======
-	
-	@Test 
-	public void testUndoEnregistrer()
-	{
-		MoteurRPN rpn = new MoteurRPN();
-		EnregistrerOprnd eng =new EnregistrerOprnd(rpn);
-		rpn.setSaisie("1");
-		eng.execute();
-		rpn.setSaisie("2");
-		eng.execute();
-		rpn.setSaisie("3");
-		eng.execute();
-		eng.undo();
-		assertEquals("1 2",eng.getRpn().toString());
-	}
-	
->>>>>>> main
+
 
 }
