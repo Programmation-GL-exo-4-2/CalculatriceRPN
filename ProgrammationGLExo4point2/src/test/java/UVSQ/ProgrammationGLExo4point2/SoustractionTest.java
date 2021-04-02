@@ -28,7 +28,6 @@ public class SoustractionTest {
 		int x=rpn.getListOperande().get(0);
 		assertEquals(x,1);
 	}
-<<<<<<< HEAD
 	
 	@Test 
 	public void testUndoSoustraction()
@@ -44,23 +43,6 @@ public class SoustractionTest {
 		d.undo();
 		assertEquals(d.getRpn().toString(),"3 2");
 	}
-||||||| 1ea3cd9
-=======
-	
-	@Test 
-	public void testUndoSoustraction()
-	{
-		MoteurRPN rpn = new MoteurRPN();
-		Soustraction s =new Soustraction(rpn);
-		s.getRpn().setSaisie("3");
-		s.getRpn().enregistrerOprnd();
-		s.getRpn().setSaisie("2");
-		s.getRpn().enregistrerOprnd();
-		s.getRpn().setSaisie("-");
-		s.execute();
-		s.undo();
-		assertEquals("3 2",s.getRpn().toString());
-	}
->>>>>>> main
+
 
 }
