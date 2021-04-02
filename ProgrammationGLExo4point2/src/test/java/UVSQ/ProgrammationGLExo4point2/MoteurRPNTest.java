@@ -32,6 +32,7 @@ public class MoteurRPNTest {
 		MoteurRPN rpn=new MoteurRPN();
 		rpn.setSaisie("5");
 		rpn.enregistrerOprnd();
+<<<<<<< HEAD
 		assertEquals("5",rpn.toString());
 		assertEquals(rpn.toString(),rpn.getStackUndo().get(0).toString());
 		rpn.setSaisie("6");
@@ -43,6 +44,15 @@ public class MoteurRPNTest {
 		assertEquals("5 6 7",rpn.toString());
 		assertEquals(rpn.toString(),rpn.getStackUndo().get(2).toString());
 		
+||||||| 1ea3cd9
+		int x=rpn.getListOperande().get(0);
+		assertEquals(5,x);
+=======
+		int x=rpn.getListOperande().get(0);
+		assertEquals(5,x);
+		int y=rpn.getUndo().peek();
+		assertEquals(5,y);
+>>>>>>> main
 		
 	}
 	
@@ -61,7 +71,13 @@ public class MoteurRPNTest {
 		if(!rpn.getListOperande().isEmpty())
 			x=rpn.getListOperande().get(0);
 		assertEquals(3,x);
+<<<<<<< HEAD
 		assertEquals(rpn.toString(),rpn.getStackUndo().get(2));
+||||||| 1ea3cd9
+=======
+		int y=rpn.getUndo().peek();
+		assertEquals(3,y);
+>>>>>>> main
 		
 	}
 	
@@ -80,7 +96,13 @@ public class MoteurRPNTest {
 		if(!rpn.getListOperande().isEmpty())
 			x=rpn.getListOperande().get(0);
 		assertEquals(1,x);
+<<<<<<< HEAD
 		assertEquals(rpn.toString(),rpn.getStackUndo().get(2));
+||||||| 1ea3cd9
+=======
+		int y=rpn.getUndo().peek();
+		assertEquals(1,y);
+>>>>>>> main
 		
 	}
 	
@@ -98,7 +120,13 @@ public class MoteurRPNTest {
 		if(!rpn.getListOperande().isEmpty())
 			x=rpn.getListOperande().get(0);
 		assertEquals(6,x);
+<<<<<<< HEAD
 		assertEquals(rpn.toString(),rpn.getStackUndo().get(2));
+||||||| 1ea3cd9
+=======
+		int y=rpn.getUndo().peek();
+		assertEquals(6,y);
+>>>>>>> main
 		
 	}
 	
@@ -116,7 +144,13 @@ public class MoteurRPNTest {
 		if(!rpn.getListOperande().isEmpty())
 			x=rpn.getListOperande().get(0);
 		assertEquals(2,x);
+<<<<<<< HEAD
 		assertEquals(rpn.toString(),rpn.getStackUndo().get(2));
+||||||| 1ea3cd9
+=======
+		int y=rpn.getUndo().peek();
+		assertEquals(2,y);
+>>>>>>> main
 		
 	}
 	
@@ -131,5 +165,22 @@ public class MoteurRPNTest {
 		System.out.print(rpn.toString());
 		assertEquals("8 4",rpn.toString());
 	}
+	
+	@Test
+	public void testSupprimeOprnd()
+	{
+		MoteurRPN rpn=new MoteurRPN();
+		rpn.setSaisie("8");
+		rpn.enregistrerOprnd();
+		rpn.setSaisie("4");
+		rpn.enregistrerOprnd();
+		rpn.supprimerOprnd();
+		int x=rpn.getListOperande().get(0);
+		assertEquals(8,x);
+		int y=rpn.getUndo().peek();
+		assertEquals(8,y);
+	}
+	
+	
 
 }

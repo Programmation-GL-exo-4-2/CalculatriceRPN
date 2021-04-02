@@ -13,10 +13,20 @@ public class EnregistrerOprnd extends CommandClass implements Command {
 		this.getRpn().enregistrerOprnd();
 	}
 
+<<<<<<< HEAD
 
 	public void undo() 
 	{
 		this.getRpn().annuler();
 	}
 
+||||||| 1ea3cd9
+=======
+
+	public void undo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+>>>>>>> main
 }

@@ -10,7 +10,8 @@ public class Addition extends CommandClass implements Command {
 	}
 	
 	
-	public void execute() {
+	public void execute() 
+	{
 		this.getRpn().operationOprnd();
 	}
 
