@@ -27,7 +27,7 @@ public class MultiplicationTest {
 		int x=rpn.getListOperande().get(0);
 		assertEquals(x,6);
 	}
-<<<<<<< HEAD
+
 	
 	@Test 
 	public void testUndoMultiplication()
@@ -43,23 +43,6 @@ public class MultiplicationTest {
 		d.undo();
 		assertEquals(d.getRpn().toString(),"3 2");
 	}
-||||||| 1ea3cd9
-=======
-	
-	@Test 
-	public void testUndoMultiplication()
-	{
-		MoteurRPN rpn = new MoteurRPN();
-		Multiplication m =new Multiplication(rpn);
-		m.getRpn().setSaisie("3");
-		m.getRpn().enregistrerOprnd();
-		m.getRpn().setSaisie("2");
-		m.getRpn().enregistrerOprnd();
-		m.getRpn().setSaisie("*");
-		m.execute();
-		m.undo();
-		assertEquals("3 2",m.getRpn().toString());
-	}
->>>>>>> main
+
 
 }
