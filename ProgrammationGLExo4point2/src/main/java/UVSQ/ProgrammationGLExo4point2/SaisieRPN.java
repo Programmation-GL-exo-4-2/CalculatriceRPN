@@ -1,6 +1,7 @@
 package UVSQ.ProgrammationGLExo4point2;
 
 import java.util.Scanner;
+import java.util.Stack;
 
 
 public class SaisieRPN {
@@ -11,8 +12,7 @@ public class SaisieRPN {
     private Command mult;
     private Command div;
     private Command enrg;
-    private Command quit;
-    private Command undo;
+    private Stack<Command> stk = new Stack<Command>();
     
     public SaisieRPN() 
     {
@@ -22,8 +22,6 @@ public class SaisieRPN {
         mult = new Multiplication(moteur);
         div = new Division(moteur);
         enrg = new EnregistrerOprnd(moteur);
-        quit = new Quit(moteur);
-        undo = new Undo(moteur);
         
     }
 
@@ -33,6 +31,7 @@ public class SaisieRPN {
         String str = sc.nextLine();
         return str;
     }
+    
     public void evaluerSaisie(String saisie) 
     {
         switch(saisie) {
@@ -40,35 +39,31 @@ public class SaisieRPN {
 
                 moteur.setSaisie("+");
                 add.execute();
+                stk.add(add);
                 break;
                 }
             case "-": {
                 moteur.setSaisie("-");
                 sub.execute();
+                stk.add(sub);
                 break;
                 }
             case "*": {
                 moteur.setSaisie("*");
                 mult.execute();
+                stk.add(mult);
                 break;
                 }
             case "/": {
                 moteur.setSaisie("/");
                 div.execute();
+                stk.add(div);
                 break;
                 }
-            case "undo" : {
-                undo.execute();
-                break;
-                }
-            case "quit" : {
-                moteur.quit();
-                break;
-                }
-            //si c'est un chiffre 
             default : {
                 moteur.setSaisie(saisie);
                 enrg.execute();
+                stk.add(enrg);
                 break;
             }
         }
@@ -80,5 +75,9 @@ public class SaisieRPN {
 
     public void setMoteur(MoteurRPN moteur) {
         this.moteur = moteur;
+    }
+    public Command getPopStack()
+    {
+    	return stk.pop();
     }
 }
