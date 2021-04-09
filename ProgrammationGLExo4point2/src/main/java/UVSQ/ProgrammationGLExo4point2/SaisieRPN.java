@@ -10,9 +10,13 @@ public class SaisieRPN {
 		
 	}
 	
-	public void evaluerSaisie() 
+	public SaisieRPN(MoteurRPN rpn) 
 	{
-		
+		moteur=rpn;
+	}
+	public int evaluerSaisie(String saisie) 
+	{
+		return 0;
 	}
 
 	public MoteurRPN getMoteur() {
