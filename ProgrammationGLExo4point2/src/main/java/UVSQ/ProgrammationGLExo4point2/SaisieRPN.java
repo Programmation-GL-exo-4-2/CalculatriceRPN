@@ -27,30 +27,33 @@ public class SaisieRPN {
         
     }
 
-    public void evaluerSaisie() 
+    public String saisir()
     {
-        Scanner sc = new Scanner(System.in);
+    	Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-
-        switch(str) {
+        return str;
+    }
+    public void evaluerSaisie(String saisie) 
+    {
+        switch(saisie) {
             case "+": {
 
-                moteur.setSaisie(str);
+                moteur.setSaisie("+");
                 add.execute();
                 break;
                 }
             case "-": {
-                moteur.setSaisie(str);
+                moteur.setSaisie("-");
                 sub.execute();
                 break;
                 }
             case "*": {
-                moteur.setSaisie(str);
+                moteur.setSaisie("*");
                 mult.execute();
                 break;
                 }
             case "/": {
-                moteur.setSaisie(str);
+                moteur.setSaisie("/");
                 div.execute();
                 break;
                 }
@@ -64,7 +67,7 @@ public class SaisieRPN {
                 }
             //si c'est un chiffre 
             default : {
-                moteur.setSaisie(str);
+                moteur.setSaisie(saisie);
                 enrg.execute();
                 break;
             }
