@@ -1,12 +1,11 @@
 package UVSQ.ProgrammationGLExo4point2;
 
 import java.util.Scanner;
-import java.util.Stack;
+
 
 public class SaisieRPN {
 
     private MoteurRPN moteur;
-    private Stack<Command> commands;
     private Command add;
     private Command sub;
     private Command mult;
@@ -14,9 +13,10 @@ public class SaisieRPN {
     private Command enrg;
     private Command quit;
     private Command undo;
+    
     public SaisieRPN() 
     {
-
+    	moteur=new MoteurRPN();
         add = new Addition(moteur);
         sub = new Soustraction(moteur);
         mult = new Multiplication(moteur);
@@ -24,8 +24,7 @@ public class SaisieRPN {
         enrg = new EnregistrerOprnd(moteur);
         quit = new Quit(moteur);
         undo = new Undo(moteur);
-        commands = new Stack<Command>();
-
+        
     }
 
     public void evaluerSaisie() 
@@ -65,8 +64,8 @@ public class SaisieRPN {
                 }
             //si c'est un chiffre 
             default : {
-                int i = Integer.valueOf(str);
-
+                moteur.setSaisie(str);
+                enrg.execute();
                 break;
             }
         }
