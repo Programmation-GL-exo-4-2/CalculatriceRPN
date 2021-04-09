@@ -1,15 +1,9 @@
 package UVSQ.ProgrammationGLExo4point2;
 
-public class Quit extends AbstractCommandClass implements Command{
+public class Quit implements Command{
 
-	public Quit(Interpreteur tmp) 
-	{
-		setInter(tmp);
-	}
-	
 	public void execute() {
-		// TODO Auto-generated method stub
-		//à faire plus tard
+		System.exit(0);
 	}
 
 	public void undo() {

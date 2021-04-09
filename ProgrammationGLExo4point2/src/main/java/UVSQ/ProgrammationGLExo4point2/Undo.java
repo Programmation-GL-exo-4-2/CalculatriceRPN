@@ -1,18 +1,21 @@
 package UVSQ.ProgrammationGLExo4point2;
 
-public class Undo extends AbstractCommandClass implements Command{
+public class Undo  implements Command{
 
-	public Undo(Interpreteur tmp) 
+	private SaisieRPN saisie;
+	
+	public Undo(SaisieRPN s)
 	{
-		setInter(tmp);
-	}
-	public void execute() 
-	{
-		//à faire plus tard
+		saisie = s;
 	}
 	public void undo() {
 		// TODO Auto-generated method stub
 		
+	}
+	@Override
+	public void execute() {
+		
+		saisie.getPopStack().undo();
 	}
 
 }
