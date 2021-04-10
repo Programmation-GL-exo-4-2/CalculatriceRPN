@@ -14,7 +14,7 @@ public class CalculatriceRPN {
 	{
 		return saisie;
 	}
-	public static void main()
+	public void main()
 	{
 		System.out.println("===========================CalculatriceRPN=====================");
 		while(true)
@@ -31,6 +31,8 @@ public class CalculatriceRPN {
 			else 
 				saisie.evaluerSaisie(chaine);
 			System.out.println(chaine);
+			System.out.print("Pile : ");
+			System.out.println(saisie.getMoteur().toString());
 		}
 		
 			
