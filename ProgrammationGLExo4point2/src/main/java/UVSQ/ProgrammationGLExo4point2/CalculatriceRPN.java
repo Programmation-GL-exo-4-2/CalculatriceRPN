@@ -38,7 +38,6 @@ public class CalculatriceRPN {
 				
 			else 
 				saisie.evaluerSaisie(chaine);
-			System.out.println(chaine);
 			System.out.print("Pile : ");
 			System.out.println(saisie.getMoteur().toString());
 		}

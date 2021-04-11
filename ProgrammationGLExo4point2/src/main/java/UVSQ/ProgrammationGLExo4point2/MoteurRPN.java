@@ -16,15 +16,21 @@ public class MoteurRPN extends Interpreteur{
 	
 	public void enregistrerOprnd() 
 	{
-		listOperande.add(Integer.parseInt(dernierSaisie));
-
-		String x="";
-		x+=listOperande.get(0);
-		for(int i=1;i<listOperande.size();i++)
+		try
 		{
-			x+=" "+listOperande.get(i);
-		}
-		_undo.add(x);
+			listOperande.add(Integer.parseInt(dernierSaisie));
+
+			String x="";
+			x+=listOperande.get(0);
+			for(int i=1;i<listOperande.size();i++)
+			{
+				x+=" "+listOperande.get(i);
+			}
+			_undo.add(x);
+			}catch (NumberFormatException e) {
+				System.out.println("Saisie incorrecte");
+			}
+		
 	}
 	
 	
