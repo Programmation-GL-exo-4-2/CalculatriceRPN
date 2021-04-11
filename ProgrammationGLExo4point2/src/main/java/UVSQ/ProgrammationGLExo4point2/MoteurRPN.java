@@ -38,7 +38,7 @@ public class MoteurRPN extends Interpreteur{
 	{
 			try
 			{
-				if(listOperande.size() < 1)
+				if(listOperande.size() < 0)
 				{
 					int taille=this.listOperande.size();
 					int oprnd1=this.listOperande.get(taille-2);
