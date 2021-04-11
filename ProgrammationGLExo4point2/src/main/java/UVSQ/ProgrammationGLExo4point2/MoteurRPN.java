@@ -38,29 +38,33 @@ public class MoteurRPN extends Interpreteur{
 	{
 			try
 			{
-				int taille=this.listOperande.size();
-				int oprnd1=this.listOperande.get(taille-2);
-				int oprnd2=this.listOperande.get(taille-1);
-				int rsult=0;
-				if(dernierSaisie=="+")
-					rsult=oprnd1+oprnd2;
-				else if(dernierSaisie=="-")
-					rsult=oprnd1-oprnd2;
-				else if(dernierSaisie=="*")
-					rsult=oprnd1*oprnd2;
-				else if(dernierSaisie=="/")
-					rsult=oprnd1/oprnd2;
-				this.listOperande.remove(taille-1);
-				this.listOperande.remove(taille-2);
-				this.listOperande.add(rsult);
-
-				String x="";
-				x+=listOperande.get(0);
-				for(int i=1;i<listOperande.size();i++)
+				if(listOperande.size() < 1)
 				{
-					x+=" "+listOperande.get(i);
+					int taille=this.listOperande.size();
+					int oprnd1=this.listOperande.get(taille-2);
+					int oprnd2=this.listOperande.get(taille-1);
+					int rsult=0;
+					if(dernierSaisie=="+")
+						rsult=oprnd1+oprnd2;
+					else if(dernierSaisie=="-")
+						rsult=oprnd1-oprnd2;
+					else if(dernierSaisie=="*")
+						rsult=oprnd1*oprnd2;
+					else if(dernierSaisie=="/")
+						rsult=oprnd1/oprnd2;
+					this.listOperande.remove(taille-1);
+					this.listOperande.remove(taille-2);
+					this.listOperande.add(rsult);
+	
+					String x="";
+					x+=listOperande.get(0);
+					for(int i=1;i<listOperande.size();i++)
+					{
+						x+=" "+listOperande.get(i);
+					}
+					_undo.add(x);
 				}
-				_undo.add(x);
+				else System.out.println("Opération impossible");
 			}catch (ArithmeticException e) {
 		         System.out.println ("Division sur zero impossible ");
 		      }
@@ -136,11 +140,21 @@ public class MoteurRPN extends Interpreteur{
 	
 	public void annuler()
 	{
-		this.removeStackUndoLastI();
-		int lastI=this.getStackUndo().size()-1;
-		String x=this.getStackUndo().get(lastI);
-		ArrayList<Integer> a=this.stringToArrayInteger(x);
-		this.setListOperande(a);
+		if(_undo.size() == 0) {
+			System.out.println("Pile Vide");
+		}
+		if(_undo.size() == 1) {
+			this.removeStackUndoLastI();
+			this.setListOperande(new ArrayList<Integer>());
+		}
+		else {
+			this.removeStackUndoLastI();
+			int lastI=this.getStackUndo().size()-1;
+			String x=this.getStackUndo().get(lastI);
+			ArrayList<Integer> a=this.stringToArrayInteger(x);
+			this.setListOperande(a);
+		
+		}
 	}
 	
 	

@@ -9,6 +9,7 @@ public class CalculatriceRPN {
 	{
 		saisie = new SaisieRPN();
 		u=new Undo(saisie);
+		q = new Quit();
 	}
 	public SaisieRPN getSaisieRPN()
 	{
@@ -20,7 +21,7 @@ public class CalculatriceRPN {
 		while(true)
 		{
 			String chaine = saisie.saisir();
-			String exit="exit";
+			String exit="quit";
 			String undo="undo";
 			if(chaine.equals(exit))
 			{
