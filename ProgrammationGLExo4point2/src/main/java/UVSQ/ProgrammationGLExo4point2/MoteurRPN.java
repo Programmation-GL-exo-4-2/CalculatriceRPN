@@ -36,29 +36,34 @@ public class MoteurRPN extends Interpreteur{
 	
 	public void operationOprnd()
 	{
-			int taille=this.listOperande.size();
-			int oprnd1=this.listOperande.get(taille-2);
-			int oprnd2=this.listOperande.get(taille-1);
-			int rsult=0;
-			if(dernierSaisie=="+")
-				rsult=oprnd1+oprnd2;
-			else if(dernierSaisie=="-")
-				rsult=oprnd1-oprnd2;
-			else if(dernierSaisie=="*")
-				rsult=oprnd1*oprnd2;
-			else if(dernierSaisie=="/")
-				rsult=oprnd1/oprnd2;
-			this.listOperande.remove(taille-1);
-			this.listOperande.remove(taille-2);
-			this.listOperande.add(rsult);
-
-			String x="";
-			x+=listOperande.get(0);
-			for(int i=1;i<listOperande.size();i++)
+			try
 			{
-				x+=" "+listOperande.get(i);
-			}
-			_undo.add(x);
+				int taille=this.listOperande.size();
+				int oprnd1=this.listOperande.get(taille-2);
+				int oprnd2=this.listOperande.get(taille-1);
+				int rsult=0;
+				if(dernierSaisie=="+")
+					rsult=oprnd1+oprnd2;
+				else if(dernierSaisie=="-")
+					rsult=oprnd1-oprnd2;
+				else if(dernierSaisie=="*")
+					rsult=oprnd1*oprnd2;
+				else if(dernierSaisie=="/")
+					rsult=oprnd1/oprnd2;
+				this.listOperande.remove(taille-1);
+				this.listOperande.remove(taille-2);
+				this.listOperande.add(rsult);
+
+				String x="";
+				x+=listOperande.get(0);
+				for(int i=1;i<listOperande.size();i++)
+				{
+					x+=" "+listOperande.get(i);
+				}
+				_undo.add(x);
+			}catch (ArithmeticException e) {
+		         System.out.println ("Division sur zero impossible ");
+		      }
 			
 	}
 	public ArrayList<Integer> getEnsembleOpnd()
