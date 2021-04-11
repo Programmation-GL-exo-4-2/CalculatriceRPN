@@ -20,14 +20,22 @@ public class CalculatriceRPN {
 		while(true)
 		{
 			String chaine = saisie.saisir();
-			if(chaine=="exit")
+			String exit="exit";
+			String undo="undo";
+			if(chaine.equals(exit))
 			{
-				System.out.println("Je suis dans exite");
+				System.out.println("Exit...");
 				q.execute();
 			}
 				
-			else if(chaine=="undo")
-				u.execute();
+			else if(chaine.equals(undo))
+			{
+				if(!saisie.pileUndoVide())
+					u.execute();
+				else 
+					System.out.println("La pile des commands est vide!");
+			}
+				
 			else 
 				saisie.evaluerSaisie(chaine);
 			System.out.println(chaine);

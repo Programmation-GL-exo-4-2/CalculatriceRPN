@@ -80,4 +80,9 @@ public class SaisieRPN {
     {
     	return stk.pop();
     }
+    
+    public boolean pileUndoVide()
+    {
+    	return stk.isEmpty();
+    }
 }
